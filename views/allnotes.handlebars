@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=New+Rocker|Roboto" rel="stylesheet">
+{{!-- <script src="https://code.jquery.com/jquery.js"></script>
+<script src="/app.js"></script> --}}
+<title>NYT News Scraper</title>
+</head>
+
+<div id="header">
+<h1>Article Notes</h1>
+<button><a href="/" id="scrape">Home</a></button>
+<button><a href="/saved" id="savedNotesPage">See Saved Articles</a></button>
+</div>
+<!-- Pass in data from server.js -->
+<div class="text_middle">
+<ul>
+{{#each articleNotes}}
+<li>
+<p><span class="noteTitle">Title:</span> {{this.title}}</p>
+<p><span class="label">Summary:</span> {{this.body}}</p>
+
+</li>
+<button id='deleteNoteHTML' data-id='{{this._id}}' data-title='{{this.title}}' data-summary='{{this.body}}'
+data-link='{{this.link}}'>Delete Note</button>
+{{/each}}
+</ul>
+</div>
+
+
