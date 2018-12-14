@@ -18,7 +18,7 @@ var PORT = process.env.PORT || 3000;
 var app = express();
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
+// app.set('view engine', 'handlebars');
 
 
 // Configure middleware
