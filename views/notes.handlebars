@@ -13,23 +13,20 @@
 </head>
 
 <div id="header">
-  <h1>Article Notes</h1>
+  <h1>{{articleNotes.title}}</h1>
     <button><a href="/" id="scrape">Home</a></button>
       <button><a href="/saved" id="savedNotesPage">See Saved Articles</a></button>
 </div>
 <!-- Pass in data from server.js -->
 <div class="text_middle">
   <ul>
-    {{#each articleNotes}}
     <li>
-    <p><span class="noteTitle">Title:</span> {{this.title}}</p>
-    <p><span class="label">Summary:</span> {{this.body}}</p>
-
-    </li>
-      <button id='deleteNoteHTML' data-id='{{this._id}}' data-title='{{this.title}}' data-summary='{{this.body}}'
-      data-link='{{this.link}}'>Delete Note</button>
-    {{/each}}
+    <p><span class="label">Summary:</span> {{articleNotes.summary}}</p>
+    <p><a href="{{articleNotes.link}}" target="_blank">Read Full Article</a></p>
+    <p><span class="label">Note Title:</span> {{articleNotes.note.title}}</p>
+    <p><span class="label">Note Body:</span> {{articleNotes.note.body}}</p>
+  </li>
+  <button id='deleteNoteHTML' data-id='{{this._id}}' data-title='{{this.title}}' data-summary='{{this.body}}'
+    data-link='{{this.link}}'>Delete from Saved</button>
   </ul>
 </div>
-
-
