@@ -1,2 +1,2 @@
 # NewsScraper
-https://nyt-newsscraping.herokuapp.com/
+https://secure-mesa-59921.herokuapp.com/
